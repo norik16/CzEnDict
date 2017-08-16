@@ -14,7 +14,7 @@ class FavouritesViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var tableView: UITableView!
     var favouriteTranslations: FavoriteTranslations? = nil
     
-    var translations : [Translation] = []
+    var translations : [Item] = []
     
     override func viewDidAppear(_ animated: Bool) {
         self.favouriteTranslations = FavoriteTranslations.getInstance()

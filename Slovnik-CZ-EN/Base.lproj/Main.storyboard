@@ -127,7 +127,7 @@
         <!--Slovník -->
         <scene sceneID="3gW-rS-Odl">
             <objects>
-                <viewController id="F9v-nR-ZNm" customClass="DictionaryViewController" customModule="Slovnik_CZ_EN" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="F9v-nR-ZNm" customClass="SearchViewController" customModule="Slovnik_CZ_EN" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mut-Pp-5kZ"/>
                         <viewControllerLayoutGuide type="bottom" id="0A0-pn-ORN"/>

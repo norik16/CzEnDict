@@ -1,0 +1,37 @@
+[{
+	"id": "d41d8cd98f00b204e9800998ecf8427e",
+	"origin": "",
+	"originLanguage": "en",
+	"translations": [],
+	"class": ""
+}, {
+	"id": "c9e04c42104efecb984e93bcdb2",
+	"origin": "100-year flood",
+	"originLanguage": "en",
+	"translations": ["stoletá povodeň"],
+	"class": "n"
+}, {
+	"id": "77225c9e04c42104efecb984e93bcdb2",
+	"origin": "100-year flood",
+	"originLanguage": "en",
+	"translations": ["stoletá voda"],
+	"class": "n"
+}, {
+	"id": "d3a6c12aa04d93a2e1f05a9303c13a7c",
+	"origin": "10th",
+	"originLanguage": "en",
+	"translations": ["desátý"],
+	"class": "num"
+}, {
+	"id": "2e28a1af0bba6aebdf7e54f140e08a9b",
+	"origin": "11th",
+	"originLanguage": "en",
+	"translations": ["jedenáctý"],
+	"class": "num"
+}, {
+	"id": "4640a67839168c4cba2f2f4607617a48",
+	"origin": "12th",
+	"originLanguage": "en",
+	"translations": ["dvanáctý"],
+	"class": "num"
+}]

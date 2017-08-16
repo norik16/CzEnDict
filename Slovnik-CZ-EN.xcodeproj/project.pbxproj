@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		5B49F1CB1F445A44003BDA2F /* FavoriteTranslations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B49F1CA1F445A44003BDA2F /* FavoriteTranslations.swift */; };
-		5B49F1CD1F445B09003BDA2F /* Translation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B49F1CC1F445B09003BDA2F /* Translation.swift */; };
-		5B8A1C6F1F43A6E200849442 /* DictionaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8A1C6E1F43A6E200849442 /* DictionaryViewController.swift */; };
+		5B49F1CD1F445B09003BDA2F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B49F1CC1F445B09003BDA2F /* Item.swift */; };
+		5B8A1C6F1F43A6E200849442 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8A1C6E1F43A6E200849442 /* SearchViewController.swift */; };
 		5B9131901F435CC200F08701 /* DictionaryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B91318F1F435CC200F08701 /* DictionaryHelper.swift */; };
 		5B9131921F43622000F08701 /* en-cs.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5B9131911F43622000F08701 /* en-cs.txt */; };
+		5BA6E73C1F44FB05007174FC /* dict.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B5660041F44F137008D1C2D /* dict.json */; };
 		5BF2D15F1F05675F00A75158 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2D15E1F05675F00A75158 /* AppDelegate.swift */; };
 		5BF2D1661F05675F00A75158 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BF2D1641F05675F00A75158 /* Main.storyboard */; };
 		5BF2D1681F05675F00A75158 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BF2D1671F05675F00A75158 /* Assets.xcassets */; };
@@ -21,8 +22,9 @@
 
 /* Begin PBXFileReference section */
 		5B49F1CA1F445A44003BDA2F /* FavoriteTranslations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTranslations.swift; sourceTree = "<group>"; };
-		5B49F1CC1F445B09003BDA2F /* Translation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translation.swift; sourceTree = "<group>"; };
-		5B8A1C6E1F43A6E200849442 /* DictionaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryViewController.swift; sourceTree = "<group>"; };
+		5B49F1CC1F445B09003BDA2F /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		5B5660041F44F137008D1C2D /* dict.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = dict.json; sourceTree = "<group>"; };
+		5B8A1C6E1F43A6E200849442 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		5B91318F1F435CC200F08701 /* DictionaryHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryHelper.swift; sourceTree = "<group>"; };
 		5B9131911F43622000F08701 /* en-cs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "en-cs.txt"; sourceTree = "<group>"; };
 		5BF2D15B1F05675F00A75158 /* Slovnik-CZ-EN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Slovnik-CZ-EN.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,6 +47,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5BA6E73D1F4500F0007174FC /* Dictionary */ = {
+			isa = PBXGroup;
+			children = (
+				5B91318F1F435CC200F08701 /* DictionaryHelper.swift */,
+				5B49F1CC1F445B09003BDA2F /* Item.swift */,
+			);
+			path = Dictionary;
+			sourceTree = "<group>";
+		};
 		5BF2D1521F05675F00A75158 = {
 			isa = PBXGroup;
 			children = (
@@ -64,16 +75,16 @@
 		5BF2D15D1F05675F00A75158 /* Slovnik-CZ-EN */ = {
 			isa = PBXGroup;
 			children = (
+				5B5660041F44F137008D1C2D /* dict.json */,
 				5B9131911F43622000F08701 /* en-cs.txt */,
 				5BF2D15E1F05675F00A75158 /* AppDelegate.swift */,
 				5BF2D1641F05675F00A75158 /* Main.storyboard */,
 				5BF2D1671F05675F00A75158 /* Assets.xcassets */,
 				5BF2D1691F05675F00A75158 /* LaunchScreen.storyboard */,
 				5BF2D16C1F05675F00A75158 /* Info.plist */,
-				5B91318F1F435CC200F08701 /* DictionaryHelper.swift */,
-				5B8A1C6E1F43A6E200849442 /* DictionaryViewController.swift */,
+				5BA6E73D1F4500F0007174FC /* Dictionary */,
+				5B8A1C6E1F43A6E200849442 /* SearchViewController.swift */,
 				5B49F1CA1F445A44003BDA2F /* FavoriteTranslations.swift */,
-				5B49F1CC1F445B09003BDA2F /* Translation.swift */,
 				5BFE1DAF1F449DB900C73C60 /* FavouritesViewController.swift */,
 			);
 			path = "Slovnik-CZ-EN";
@@ -139,6 +150,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BA6E73C1F44FB05007174FC /* dict.json in Resources */,
 				5BF2D16B1F05675F00A75158 /* LaunchScreen.storyboard in Resources */,
 				5B9131921F43622000F08701 /* en-cs.txt in Resources */,
 				5BF2D1681F05675F00A75158 /* Assets.xcassets in Resources */,
@@ -155,10 +167,10 @@
 			files = (
 				5BFE1DB01F449DB900C73C60 /* FavouritesViewController.swift in Sources */,
 				5BF2D15F1F05675F00A75158 /* AppDelegate.swift in Sources */,
-				5B8A1C6F1F43A6E200849442 /* DictionaryViewController.swift in Sources */,
+				5B8A1C6F1F43A6E200849442 /* SearchViewController.swift in Sources */,
 				5B9131901F435CC200F08701 /* DictionaryHelper.swift in Sources */,
 				5B49F1CB1F445A44003BDA2F /* FavoriteTranslations.swift in Sources */,
-				5B49F1CD1F445B09003BDA2F /* Translation.swift in Sources */,
+				5B49F1CD1F445B09003BDA2F /* Item.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
