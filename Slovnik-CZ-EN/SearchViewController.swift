@@ -48,8 +48,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     
     
     func updateTableForText(searchedText: String) {
-        translations = []
-        translations +=  DictionaryHelper.translate(serachedText: searchedText)
+        translations = DictionaryHelper.translate(serachedText: searchedText)
         
         DispatchQueue.main.async {
             self.tableView.reloadData()
@@ -84,12 +83,8 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
 	func tableView(_ tableView: UITableView, editActionsForRowAt: IndexPath) -> [UITableViewRowAction]? {
         
         let toggleFavorite = UITableViewRowAction(style: .normal, title: "Favorite") { (action, index) -> Void in
-            let translation = self.translations[index.section]
-            self.favouriteTranslations.addKey(key: translation.id)
-            
-            FavoriteTranslations.saveInstance()
-            
-            print("favorite button tapped in serach")
+            let item = self.translations[index.section]
+            self.favouriteTranslations.addKey(key: item.id)
         }
         
         toggleFavorite.backgroundColor =  self.view.tintColor

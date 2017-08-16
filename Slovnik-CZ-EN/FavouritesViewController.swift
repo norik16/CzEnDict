@@ -55,6 +55,23 @@ class FavouritesViewController: UIViewController, UITableViewDelegate, UITableVi
         return cell
     }
     
+    func tableView(_ tableView: UITableView, editActionsForRowAt: IndexPath) -> [UITableViewRowAction]? {
+        
+        let toggleFavorite = UITableViewRowAction(style: .default, title: "Remove") { (action, index) -> Void in
+            let item = self.translations[index.section]
+            self.favouriteTranslations?.removeKey(key: item.id)
+            
+            self.translations = DictionaryHelper.getByIds(ids: (self.favouriteTranslations?.getKeysReversed())!)
+            DispatchQueue.main.async {
+                self.tableView.deleteSections([index.section], with: .fade)
+            }
+        }
+        
+        toggleFavorite.backgroundColor =  UIColor.red
+        
+        return [toggleFavorite]
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
