@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5B8A1C6F1F43A6E200849442 /* DictionaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8A1C6E1F43A6E200849442 /* DictionaryViewController.swift */; };
-		5B91318E1F435B7D00F08701 /* DictonaryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B91318D1F435B7D00F08701 /* DictonaryTableViewController.swift */; };
 		5B9131901F435CC200F08701 /* DictionaryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B91318F1F435CC200F08701 /* DictionaryHelper.swift */; };
 		5B9131921F43622000F08701 /* en-cs.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5B9131911F43622000F08701 /* en-cs.txt */; };
 		5BF2D15F1F05675F00A75158 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2D15E1F05675F00A75158 /* AppDelegate.swift */; };
@@ -19,7 +18,6 @@
 
 /* Begin PBXFileReference section */
 		5B8A1C6E1F43A6E200849442 /* DictionaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryViewController.swift; sourceTree = "<group>"; };
-		5B91318D1F435B7D00F08701 /* DictonaryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictonaryTableViewController.swift; sourceTree = "<group>"; };
 		5B91318F1F435CC200F08701 /* DictionaryHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryHelper.swift; sourceTree = "<group>"; };
 		5B9131911F43622000F08701 /* en-cs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "en-cs.txt"; sourceTree = "<group>"; };
 		5BF2D15B1F05675F00A75158 /* Slovnik-CZ-EN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Slovnik-CZ-EN.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,7 +64,6 @@
 				5BF2D1671F05675F00A75158 /* Assets.xcassets */,
 				5BF2D1691F05675F00A75158 /* LaunchScreen.storyboard */,
 				5BF2D16C1F05675F00A75158 /* Info.plist */,
-				5B91318D1F435B7D00F08701 /* DictonaryTableViewController.swift */,
 				5B91318F1F435CC200F08701 /* DictionaryHelper.swift */,
 				5B8A1C6E1F43A6E200849442 /* DictionaryViewController.swift */,
 			);
@@ -148,7 +145,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BF2D15F1F05675F00A75158 /* AppDelegate.swift in Sources */,
-				5B91318E1F435B7D00F08701 /* DictonaryTableViewController.swift in Sources */,
 				5B8A1C6F1F43A6E200849442 /* DictionaryViewController.swift in Sources */,
 				5B9131901F435CC200F08701 /* DictionaryHelper.swift in Sources */,
 			);

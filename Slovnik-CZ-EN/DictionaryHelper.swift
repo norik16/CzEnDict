@@ -43,13 +43,11 @@ class DictionaryHelper {
         Translation(origin: "Vykonávat", originLanguage: Language.czech, translations:["Perform"])
     ]
     
-    static func translate(serachedText: String, inLanguage: Language) -> [Translation]? {
+    static func translate(serachedText: String, inLanguage: Language) -> [Translation] {
         if inLanguage == Language.english {
-            return self.dictEnCs.filter {  pair in pair.origin.contains(serachedText) }
+            return self.dictEnCs.filter {  pair in pair.origin.lowercased().hasPrefix(serachedText.lowercased()) }
         } else {
-            return self.dictCsEn.filter {  pair in pair.origin.contains(serachedText) }
+            return self.dictCsEn.filter {  pair in pair.origin.lowercased().hasPrefix(serachedText.lowercased()) }
         }
-        
-        return nil
     }
 }
