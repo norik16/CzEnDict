@@ -17,7 +17,7 @@ class FavouritesViewController: UIViewController, UITableViewDelegate, UITableVi
     var translations : [Translation] = []
     
     override func viewDidAppear(_ animated: Bool) {
-        self.favouriteTranslations = FavoriteTranslations.loadFromCache()
+        self.favouriteTranslations = FavoriteTranslations.getInstance()
         self.translations = DictionaryHelper.getByIds(ids: (self.favouriteTranslations?.getKeysReversed())!)
         
         

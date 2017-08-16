@@ -13,7 +13,7 @@ class DictionaryViewController: UIViewController, UISearchBarDelegate, UITableVi
     @IBOutlet weak var tableView: UITableView!
     let searchBar: UISearchBar! =  UISearchBar()
     
-    var favouriteTranslations: FavoriteTranslations = FavoriteTranslations.loadFromCache()
+    var favouriteTranslations: FavoriteTranslations = FavoriteTranslations.getInstance()
     
     var translations : [Translation] = []
     let sections = ["English", "Czech"]
@@ -89,6 +89,9 @@ class DictionaryViewController: UIViewController, UISearchBarDelegate, UITableVi
         let toggleFavorite = UITableViewRowAction(style: .normal, title: "Favorite") { (action, index) -> Void in
             let translation = self.translations[index.section]
             self.favouriteTranslations.addKey(key: translation.id)
+            
+            FavoriteTranslations.saveInstance()
+            
             print("favorite button tapped in serach")
         }
         
@@ -97,7 +100,7 @@ class DictionaryViewController: UIViewController, UISearchBarDelegate, UITableVi
         return [toggleFavorite]
     }
     
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

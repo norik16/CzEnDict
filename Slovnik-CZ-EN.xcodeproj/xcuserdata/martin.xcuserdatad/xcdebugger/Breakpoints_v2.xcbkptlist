@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Slovnik-CZ-EN/DictionaryHelper.swift"
-            timestampString = "524608560.123865"
+            timestampString = "524611532.607235"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "16"
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Slovnik-CZ-EN/DictionaryViewController.swift"
-            timestampString = "524608560.12396"
+            timestampString = "524611532.607366"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "73"
@@ -89,7 +89,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Slovnik-CZ-EN/DictionaryViewController.swift"
-            timestampString = "524608560.124011"
+            timestampString = "524611532.607425"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "80"
@@ -105,7 +105,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Slovnik-CZ-EN/DictionaryViewController.swift"
-            timestampString = "524608560.124057"
+            timestampString = "524611532.607477"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "68"
@@ -121,7 +121,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Slovnik-CZ-EN/DictionaryViewController.swift"
-            timestampString = "524608560.124102"
+            timestampString = "524611532.607533"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "63"
@@ -137,7 +137,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Slovnik-CZ-EN/DictionaryViewController.swift"
-            timestampString = "524608560.124145"
+            timestampString = "524611532.607589"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "69"
@@ -153,7 +153,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Slovnik-CZ-EN/DictionaryViewController.swift"
-            timestampString = "524608560.12419"
+            timestampString = "524611532.607639"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "81"
@@ -168,62 +168,14 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Slovnik-CZ-EN/FavoriteTranslations.swift"
-            timestampString = "524608560.124235"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "loadFromCache()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Slovnik-CZ-EN/FavouritesViewController.swift"
-            timestampString = "524608560.124277"
+            timestampString = "524611532.607689"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
             endingLineNumber = "21"
             landmarkName = "viewDidAppear(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Slovnik_CZ_EN.FavouritesViewController.viewDidAppear(Swift.Bool) -&gt; ()"
-                  moduleName = "Slovnik-CZ-EN"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/martin/Documents/Slovnik-CZ-EN/Slovnik-CZ-EN/FavouritesViewController.swift"
-                  timestampString = "524608148.573428"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "25">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in Slovnik_CZ_EN.FavouritesViewController.viewDidAppear(Swift.Bool) -&gt; ()"
-                  moduleName = "Slovnik-CZ-EN"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/martin/Documents/Slovnik-CZ-EN/Slovnik-CZ-EN/FavouritesViewController.swift"
-                  timestampString = "524608148.575564"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24"
-                  offsetFromSymbolStart = "21">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -233,7 +185,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Slovnik-CZ-EN/DictionaryHelper.swift"
-            timestampString = "524608560.124331"
+            timestampString = "524611532.607872"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "48"
@@ -249,7 +201,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Slovnik-CZ-EN/DictionaryHelper.swift"
-            timestampString = "524608560.124372"
+            timestampString = "524611532.607927"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "50"
@@ -265,7 +217,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Slovnik-CZ-EN/FavouritesViewController.swift"
-            timestampString = "524608560.124413"
+            timestampString = "524611532.608102"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "23"
@@ -281,7 +233,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Slovnik-CZ-EN/FavouritesViewController.swift"
-            timestampString = "524608560.124466"
+            timestampString = "524611532.608292"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "22"
@@ -297,7 +249,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Slovnik-CZ-EN/DictionaryHelper.swift"
-            timestampString = "524608560.124518"
+            timestampString = "524611532.608398"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "49"
@@ -345,7 +297,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Slovnik-CZ-EN/FavouritesViewController.swift"
-            timestampString = "524608560.124561"
+            timestampString = "524611532.60849"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "15"
@@ -423,7 +375,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Slovnik-CZ-EN/FavouritesViewController.swift"
-            timestampString = "524608560.124606"
+            timestampString = "524611532.608607"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "13"
@@ -501,7 +453,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Slovnik-CZ-EN/FavouritesViewController.swift"
-            timestampString = "524608560.124652"
+            timestampString = "524611532.608757"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "17"
@@ -579,7 +531,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Slovnik-CZ-EN/FavouritesViewController.swift"
-            timestampString = "524608560.124697"
+            timestampString = "524611532.608881"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "19"
@@ -595,45 +547,107 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Slovnik-CZ-EN/FavouritesViewController.swift"
-            timestampString = "524608560.124742"
+            timestampString = "524611532.609017"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "20"
             endingLineNumber = "20"
             landmarkName = "viewDidAppear(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Slovnik_CZ_EN.FavouritesViewController.viewDidAppear(Swift.Bool) -&gt; ()"
-                  moduleName = "Slovnik-CZ-EN"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/martin/Documents/Slovnik-CZ-EN/Slovnik-CZ-EN/FavouritesViewController.swift"
-                  timestampString = "524608148.607297"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "25">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in Slovnik_CZ_EN.FavouritesViewController.viewDidAppear(Swift.Bool) -&gt; ()"
-                  moduleName = "Slovnik-CZ-EN"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/martin/Documents/Slovnik-CZ-EN/Slovnik-CZ-EN/FavouritesViewController.swift"
-                  timestampString = "524608148.614204"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24"
-                  offsetFromSymbolStart = "21">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Slovnik-CZ-EN/FavoriteTranslations.swift"
+            timestampString = "524611532.609124"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "getInstance()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Slovnik-CZ-EN/FavoriteTranslations.swift"
+            timestampString = "524611532.609479"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "getInstance()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Slovnik-CZ-EN/FavoriteTranslations.swift"
+            timestampString = "524611532.609733"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Slovnik-CZ-EN/FavoriteTranslations.swift"
+            timestampString = "524611532.609952"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "addKey(key:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Slovnik-CZ-EN/DictionaryViewController.swift"
+            timestampString = "524611532.610338"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "tableView(_:editActionsForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Slovnik-CZ-EN/DictionaryViewController.swift"
+            timestampString = "524611532.610396"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "tableView(_:editActionsForRowAt:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
