@@ -7,19 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B8A1C6F1F43A6E200849442 /* DictionaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8A1C6E1F43A6E200849442 /* DictionaryViewController.swift */; };
+		5B91318E1F435B7D00F08701 /* DictonaryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B91318D1F435B7D00F08701 /* DictonaryTableViewController.swift */; };
+		5B9131901F435CC200F08701 /* DictionaryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B91318F1F435CC200F08701 /* DictionaryHelper.swift */; };
+		5B9131921F43622000F08701 /* en-cs.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5B9131911F43622000F08701 /* en-cs.txt */; };
 		5BF2D15F1F05675F00A75158 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2D15E1F05675F00A75158 /* AppDelegate.swift */; };
-		5BF2D1611F05675F00A75158 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2D1601F05675F00A75158 /* FirstViewController.swift */; };
-		5BF2D1631F05675F00A75158 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2D1621F05675F00A75158 /* SecondViewController.swift */; };
 		5BF2D1661F05675F00A75158 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BF2D1641F05675F00A75158 /* Main.storyboard */; };
 		5BF2D1681F05675F00A75158 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BF2D1671F05675F00A75158 /* Assets.xcassets */; };
 		5BF2D16B1F05675F00A75158 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BF2D1691F05675F00A75158 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B8A1C6E1F43A6E200849442 /* DictionaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryViewController.swift; sourceTree = "<group>"; };
+		5B91318D1F435B7D00F08701 /* DictonaryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictonaryTableViewController.swift; sourceTree = "<group>"; };
+		5B91318F1F435CC200F08701 /* DictionaryHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryHelper.swift; sourceTree = "<group>"; };
+		5B9131911F43622000F08701 /* en-cs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "en-cs.txt"; sourceTree = "<group>"; };
 		5BF2D15B1F05675F00A75158 /* Slovnik-CZ-EN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Slovnik-CZ-EN.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BF2D15E1F05675F00A75158 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5BF2D1601F05675F00A75158 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		5BF2D1621F05675F00A75158 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		5BF2D1651F05675F00A75158 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5BF2D1671F05675F00A75158 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5BF2D16A1F05675F00A75158 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,13 +60,15 @@
 		5BF2D15D1F05675F00A75158 /* Slovnik-CZ-EN */ = {
 			isa = PBXGroup;
 			children = (
+				5B9131911F43622000F08701 /* en-cs.txt */,
 				5BF2D15E1F05675F00A75158 /* AppDelegate.swift */,
-				5BF2D1601F05675F00A75158 /* FirstViewController.swift */,
-				5BF2D1621F05675F00A75158 /* SecondViewController.swift */,
 				5BF2D1641F05675F00A75158 /* Main.storyboard */,
 				5BF2D1671F05675F00A75158 /* Assets.xcassets */,
 				5BF2D1691F05675F00A75158 /* LaunchScreen.storyboard */,
 				5BF2D16C1F05675F00A75158 /* Info.plist */,
+				5B91318D1F435B7D00F08701 /* DictonaryTableViewController.swift */,
+				5B91318F1F435CC200F08701 /* DictionaryHelper.swift */,
+				5B8A1C6E1F43A6E200849442 /* DictionaryViewController.swift */,
 			);
 			path = "Slovnik-CZ-EN";
 			sourceTree = "<group>";
@@ -128,6 +134,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BF2D16B1F05675F00A75158 /* LaunchScreen.storyboard in Resources */,
+				5B9131921F43622000F08701 /* en-cs.txt in Resources */,
 				5BF2D1681F05675F00A75158 /* Assets.xcassets in Resources */,
 				5BF2D1661F05675F00A75158 /* Main.storyboard in Resources */,
 			);
@@ -140,9 +147,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BF2D1631F05675F00A75158 /* SecondViewController.swift in Sources */,
 				5BF2D15F1F05675F00A75158 /* AppDelegate.swift in Sources */,
-				5BF2D1611F05675F00A75158 /* FirstViewController.swift in Sources */,
+				5B91318E1F435B7D00F08701 /* DictonaryTableViewController.swift in Sources */,
+				5B8A1C6F1F43A6E200849442 /* DictionaryViewController.swift in Sources */,
+				5B9131901F435CC200F08701 /* DictionaryHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +316,7 @@
 				5BF2D1711F05675F00A75158 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
