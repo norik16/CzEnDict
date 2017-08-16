@@ -6,13 +6,31 @@
     <dependencies>
         <deployment version="4352" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13156.2"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--Oblibene-->
+        <scene sceneID="M4E-4y-Rzx">
+            <objects>
+                <navigationController id="U9S-Rn-gs5" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Oblibene" id="rGZ-5E-dsQ"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="c0F-hT-3VP">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Pru-dl-oRH" kind="relationship" relationship="rootViewController" id="tFh-48-oWM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bfg-2N-cdm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="92" y="-868"/>
+        </scene>
+        <!--Oblíbené-->
         <scene sceneID="vhd-Wd-0rI">
             <objects>
-                <viewController id="Pru-dl-oRH" sceneMemberID="viewController">
+                <viewController id="Pru-dl-oRH" customClass="FavouritesViewController" customModule="Slovnik_CZ_EN" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YYT-0C-Yef"/>
                         <viewControllerLayoutGuide type="bottom" id="8yW-gV-uU6"/>
@@ -21,70 +39,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qSJ-xE-PBb">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <offsetWrapper key="searchTextPositionAdjustment" horizontal="22" vertical="0.0"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="Pru-dl-oRH" id="D6F-hi-vXa"/>
-                                </connections>
-                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AXq-ly-zU1">
+                                <rect key="frame" x="16" y="64" width="343" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FavouriteCell" textLabel="y1a-iL-HCj" style="IBUITableViewCellStyleDefault" id="lpy-x1-jSF">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lpy-x1-jSF" id="GIR-kG-dKu">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="y1a-iL-HCj">
+                                                    <rect key="frame" x="15" y="0.0" width="313" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="AXq-ly-zU1" firstAttribute="leading" secondItem="yiH-Qv-Rz1" secondAttribute="leadingMargin" id="1X2-jO-Juu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AXq-ly-zU1" secondAttribute="trailing" id="2Mz-If-8St"/>
+                            <constraint firstItem="AXq-ly-zU1" firstAttribute="top" secondItem="YYT-0C-Yef" secondAttribute="bottom" id="JvV-Y3-xVe"/>
+                            <constraint firstItem="8yW-gV-uU6" firstAttribute="top" secondItem="AXq-ly-zU1" secondAttribute="bottom" id="ovS-cQ-4yx"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="xBf-Fn-vyM"/>
+                    <tabBarItem key="tabBarItem" title="Oblíbené" id="xBf-Fn-vyM"/>
+                    <navigationItem key="navigationItem" title="Oblíbené" id="4NV-eT-NmL"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="KQb-kb-vYU" id="gvg-Wi-KvD"/>
+                        <outlet property="tableView" destination="AXq-ly-zU1" id="QyT-hl-VWf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FVC-hH-yU0" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <searchDisplayController id="KQb-kb-vYU">
                     <connections>
                         <outlet property="delegate" destination="Pru-dl-oRH" id="oxE-fR-nLt"/>
-                        <outlet property="searchBar" destination="qSJ-xE-PBb" id="eqL-cf-MfP"/>
                         <outlet property="searchContentsController" destination="Pru-dl-oRH" id="BM6-Uo-HBN"/>
                         <outlet property="searchResultsDataSource" destination="Pru-dl-oRH" id="pc3-zj-eDH"/>
                         <outlet property="searchResultsDelegate" destination="Pru-dl-oRH" id="SQR-2n-XLx"/>
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="441" y="-804"/>
-        </scene>
-        <!--Item 1-->
-        <scene sceneID="Unx-rB-D1u">
-            <objects>
-                <viewController id="JyG-9S-9U3" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="6Ha-I1-shi"/>
-                        <viewControllerLayoutGuide type="bottom" id="ace-sr-zOO"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="lG9-no-Aew">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="avf-Pm-jkG">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </stackView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zcu-qn-Cw3">
-                                <rect key="frame" x="53" y="184" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="49z-VU-3Kx">
-                                <rect key="frame" x="-30" y="65" width="510" height="56"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="9xn-fl-LCM"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BOx-X4-eR5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="477.60000000000002" y="-1485.6071964017992"/>
+            <point key="canvasLocation" x="925.60000000000002" y="-867.61619190404804"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="VTG-8w-aa3">
@@ -97,19 +101,18 @@
                     </tabBar>
                     <connections>
                         <segue destination="6Je-NA-2K1" kind="relationship" relationship="viewControllers" id="4od-Vb-pVx"/>
-                        <segue destination="JyG-9S-9U3" kind="relationship" relationship="viewControllers" id="VnK-ac-16G"/>
-                        <segue destination="Pru-dl-oRH" kind="relationship" relationship="viewControllers" id="XMW-Gr-eNA"/>
+                        <segue destination="U9S-Rn-gs5" kind="relationship" relationship="viewControllers" id="4ki-kA-dHH"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pB1-yF-gUO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1206" y="-476"/>
         </scene>
-        <!--Slovník-->
+        <!--Hledat-->
         <scene sceneID="phy-BT-3Nw">
             <objects>
                 <navigationController id="6Je-NA-2K1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Slovník" image="second" id="APk-jJ-o4K"/>
+                    <tabBarItem key="tabBarItem" title="Hledat" image="second" id="APk-jJ-o4K"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mGj-DO-pjf">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -173,7 +176,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V1z-lA-Ghe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1152.8" y="-107.49625187406298"/>
+            <point key="canvasLocation" x="926" y="-107"/>
         </scene>
     </scenes>
     <resources>

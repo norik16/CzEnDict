@@ -8,12 +8,12 @@
 
 import UIKit
 
-class DictionaryViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource{
+class DictionaryViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
     
-    //@IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
-    
     let searchBar: UISearchBar! =  UISearchBar()
+    
+    var favouriteTranslations: FavoriteTranslations = FavoriteTranslations.loadFromCache()
     
     var translations : [Translation] = []
     let sections = ["English", "Czech"]
@@ -24,11 +24,10 @@ class DictionaryViewController: UIViewController, UISearchBarDelegate, UITableVi
         tableView.delegate = self
         tableView.dataSource = self
         
-        searchBar.barStyle = .black
+        searchBar.barStyle = .default
         
         navigationItem.titleView = searchBar
     }
-    
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         translations = []
@@ -52,7 +51,6 @@ class DictionaryViewController: UIViewController, UISearchBarDelegate, UITableVi
         translations = []
         translations +=  DictionaryHelper.translate(serachedText: searchedText, inLanguage: .english)
         translations += DictionaryHelper.translate(serachedText: searchedText, inLanguage: .czech)
-        
         
         DispatchQueue.main.async {
             self.tableView.reloadData()
@@ -80,10 +78,23 @@ class DictionaryViewController: UIViewController, UISearchBarDelegate, UITableVi
     
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        let row = translations[indexPath.section].translations[indexPath.row]
+        let row = self.translations[indexPath.section].translations[indexPath.row]
         
         cell.textLabel?.text = row
         return cell
+    }
+    
+	func tableView(_ tableView: UITableView, editActionsForRowAt: IndexPath) -> [UITableViewRowAction]? {
+        
+        let toggleFavorite = UITableViewRowAction(style: .normal, title: "Favorite") { (action, index) -> Void in
+            let translation = self.translations[index.section]
+            self.favouriteTranslations.addKey(key: translation.id)
+            print("favorite button tapped in serach")
+        }
+        
+        toggleFavorite.backgroundColor =  self.view.tintColor
+        
+        return [toggleFavorite]
     }
     
     
