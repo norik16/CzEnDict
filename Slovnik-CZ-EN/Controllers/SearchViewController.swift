@@ -13,10 +13,10 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     @IBOutlet weak var tableView: UITableView!
     let searchBar: UISearchBar! =  UISearchBar()
     
-    var favouriteTranslations: FavoriteTranslations = FavoriteTranslations.getInstance()
+    var favouriteTranslations: FavoriteRepository = FavoriteRepository.getInstance()
+    var recentRepository: RecentRepository = RecentRepository.getInstance()
     
-    var translations : [Item] = []
-    let sections = ["English", "Czech"]
+    var items : [Item] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +30,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        translations = []
+        items = []
     }
     
     
@@ -43,12 +43,13 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         searchBar.resignFirstResponder()
         if let searchedText = searchBar.text {
             updateTableForText(searchedText: searchedText)
+            recentRepository.addRecord(searchedWorld: searchedText, firstResult: (items.first?.translations.first)!)
         }
     }
     
     
     func updateTableForText(searchedText: String) {
-        translations = DictionaryHelper.translate(serachedText: searchedText)
+        items = DictionaryHelper.translate(serachedText: searchedText)
         
         DispatchQueue.main.async {
             self.tableView.reloadData()
@@ -58,23 +59,23 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     
 
 	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "\(translations[section].origin) [\(translations[section].originLanguage)]"
+        return "\(items[section].origin) [\(items[section].originLanguage)]"
     }
     
     
 	func numberOfSections(in tableView: UITableView) -> Int {
-        return translations.count
+        return items.count
     }
     
     
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.translations[section].translations.count
+        return items[section].translations.count
     }
     
     
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        let row = self.translations[indexPath.section].translations[indexPath.row]
+        let row = items[indexPath.section].translations[indexPath.row]
         
         cell.textLabel?.text = row
         return cell
@@ -83,12 +84,13 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
 	func tableView(_ tableView: UITableView, editActionsForRowAt: IndexPath) -> [UITableViewRowAction]? {
         
         let toggleFavorite = UITableViewRowAction(style: .normal, title: "Favorite") { (action, index) -> Void in
-            let item = self.translations[index.section]
+            let item = self.items[index.section]
             self.favouriteTranslations.addKey(key: item.id)
         }
         
-        toggleFavorite.backgroundColor =  self.view.tintColor
         
+        toggleFavorite.backgroundColor =  self.view.tintColor
+
         return [toggleFavorite]
     }
     

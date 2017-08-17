@@ -12,14 +12,13 @@ class FavouritesViewController: UIViewController, UITableViewDelegate, UITableVi
     
     
     @IBOutlet weak var tableView: UITableView!
-    var favouriteTranslations: FavoriteTranslations? = nil
+    var favouriteRepository: FavoriteRepository? = nil
     
     var translations : [Item] = []
     
     override func viewDidAppear(_ animated: Bool) {
-        self.favouriteTranslations = FavoriteTranslations.getInstance()
-        self.translations = DictionaryHelper.getByIds(ids: (self.favouriteTranslations?.getKeysReversed())!)
-        
+        self.favouriteRepository = FavoriteRepository.getInstance()
+        self.translations = DictionaryHelper.getByIds(ids: (self.favouriteRepository?.getKeysReversed())!)
         
         DispatchQueue.main.async {
             self.tableView.reloadData()
@@ -59,9 +58,9 @@ class FavouritesViewController: UIViewController, UITableViewDelegate, UITableVi
         
         let toggleFavorite = UITableViewRowAction(style: .default, title: "Remove") { (action, index) -> Void in
             let item = self.translations[index.section]
-            self.favouriteTranslations?.removeKey(key: item.id)
+            self.favouriteRepository?.removeKey(key: item.id)
             
-            self.translations = DictionaryHelper.getByIds(ids: (self.favouriteTranslations?.getKeysReversed())!)
+            self.translations = DictionaryHelper.getByIds(ids: (self.favouriteRepository?.getKeysReversed())!)
             DispatchQueue.main.async {
                 self.tableView.deleteSections([index.section], with: .fade)
             }

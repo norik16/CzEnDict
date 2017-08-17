@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5B49F1CB1F445A44003BDA2F /* FavoriteTranslations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B49F1CA1F445A44003BDA2F /* FavoriteTranslations.swift */; };
+		5B161CAB1F45D2FF00531ACF /* RecentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B161CAA1F45D2FF00531ACF /* RecentsViewController.swift */; };
+		5B459C2B1F45A93C002E8048 /* RecentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B459C2A1F45A93C002E8048 /* RecentRepository.swift */; };
+		5B49F1CB1F445A44003BDA2F /* FavoriteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B49F1CA1F445A44003BDA2F /* FavoriteRepository.swift */; };
 		5B49F1CD1F445B09003BDA2F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B49F1CC1F445B09003BDA2F /* Item.swift */; };
 		5B8A1C6F1F43A6E200849442 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8A1C6E1F43A6E200849442 /* SearchViewController.swift */; };
 		5B9131901F435CC200F08701 /* DictionaryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B91318F1F435CC200F08701 /* DictionaryHelper.swift */; };
@@ -21,7 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5B49F1CA1F445A44003BDA2F /* FavoriteTranslations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTranslations.swift; sourceTree = "<group>"; };
+		5B161CAA1F45D2FF00531ACF /* RecentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentsViewController.swift; sourceTree = "<group>"; };
+		5B459C2A1F45A93C002E8048 /* RecentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentRepository.swift; sourceTree = "<group>"; };
+		5B49F1CA1F445A44003BDA2F /* FavoriteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRepository.swift; sourceTree = "<group>"; };
 		5B49F1CC1F445B09003BDA2F /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		5B5660041F44F137008D1C2D /* dict.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = dict.json; sourceTree = "<group>"; };
 		5B8A1C6E1F43A6E200849442 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +51,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B459C281F45A8DB002E8048 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5B49F1CA1F445A44003BDA2F /* FavoriteRepository.swift */,
+				5B459C2A1F45A93C002E8048 /* RecentRepository.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5B459C291F45A8EF002E8048 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5B8A1C6E1F43A6E200849442 /* SearchViewController.swift */,
+				5BFE1DAF1F449DB900C73C60 /* FavouritesViewController.swift */,
+				5B161CAA1F45D2FF00531ACF /* RecentsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		5BA6E73D1F4500F0007174FC /* Dictionary */ = {
 			isa = PBXGroup;
 			children = (
@@ -82,10 +105,9 @@
 				5BF2D1671F05675F00A75158 /* Assets.xcassets */,
 				5BF2D1691F05675F00A75158 /* LaunchScreen.storyboard */,
 				5BF2D16C1F05675F00A75158 /* Info.plist */,
+				5B459C291F45A8EF002E8048 /* Controllers */,
 				5BA6E73D1F4500F0007174FC /* Dictionary */,
-				5B8A1C6E1F43A6E200849442 /* SearchViewController.swift */,
-				5B49F1CA1F445A44003BDA2F /* FavoriteTranslations.swift */,
-				5BFE1DAF1F449DB900C73C60 /* FavouritesViewController.swift */,
+				5B459C281F45A8DB002E8048 /* Model */,
 			);
 			path = "Slovnik-CZ-EN";
 			sourceTree = "<group>";
@@ -166,10 +188,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BFE1DB01F449DB900C73C60 /* FavouritesViewController.swift in Sources */,
+				5B161CAB1F45D2FF00531ACF /* RecentsViewController.swift in Sources */,
 				5BF2D15F1F05675F00A75158 /* AppDelegate.swift in Sources */,
 				5B8A1C6F1F43A6E200849442 /* SearchViewController.swift in Sources */,
+				5B459C2B1F45A93C002E8048 /* RecentRepository.swift in Sources */,
 				5B9131901F435CC200F08701 /* DictionaryHelper.swift in Sources */,
-				5B49F1CB1F445A44003BDA2F /* FavoriteTranslations.swift in Sources */,
+				5B49F1CB1F445A44003BDA2F /* FavoriteRepository.swift in Sources */,
 				5B49F1CD1F445B09003BDA2F /* Item.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
