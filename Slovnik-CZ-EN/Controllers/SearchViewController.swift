@@ -43,7 +43,9 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         searchBar.resignFirstResponder()
         if let searchedText = searchBar.text {
             updateTableForText(searchedText: searchedText)
-            recentRepository.addRecord(searchedWorld: searchedText, firstResult: (items.first?.translations.first)!)
+            if !items.isEmpty {
+                recentRepository.addRecord(searchedWorld: searchedText, firstResult: (items.first?.translations.first)!)
+            }
         }
     }
     
