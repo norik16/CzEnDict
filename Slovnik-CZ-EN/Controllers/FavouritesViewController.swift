@@ -12,13 +12,14 @@ class FavouritesViewController: UIViewController, UITableViewDelegate, UITableVi
     
     
     @IBOutlet weak var tableView: UITableView!
-    var favouriteRepository: FavoriteRepository? = nil
+    var favouriteRepository: FavoriteRepository? = FavoriteRepository.getInstance()
+    var dictionaryRepository: DictionaryRepository = DictionaryRepository.getInstance()
     
-    var translations : [Item] = []
+    var items : [Item] = []
     
     override func viewDidAppear(_ animated: Bool) {
-        self.favouriteRepository = FavoriteRepository.getInstance()
-        self.translations = DictionaryHelper.getByIds(ids: (self.favouriteRepository?.getKeysReversed())!)
+        //self.favouriteRepository = FavoriteRepository.getInstance()
+        self.items = dictionaryRepository.getByIDs(ids: (self.favouriteRepository?.getKeysReversed())!)
         
         DispatchQueue.main.async {
             self.tableView.reloadData()
@@ -32,23 +33,23 @@ class FavouritesViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "\(translations[section].origin) [\(translations[section].originLanguage)]"
+        return "\(items[section].origin) [\(items[section].originLanguage)]"
     }
     
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return translations.count
+        return items.count
     }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.translations[section].translations.count
+        return items[section].translations.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FavouriteCell", for: indexPath)
-        let row = self.translations[indexPath.section].translations[indexPath.row]
+        let row = items[indexPath.section].translations[indexPath.row]
         
         cell.textLabel?.text = row
         return cell
@@ -57,10 +58,10 @@ class FavouritesViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, editActionsForRowAt: IndexPath) -> [UITableViewRowAction]? {
         
         let toggleFavorite = UITableViewRowAction(style: .default, title: "Remove") { (action, index) -> Void in
-            let item = self.translations[index.section]
+            let item = self.items[index.section]
             self.favouriteRepository?.removeKey(key: item.id)
             
-            self.translations = DictionaryHelper.getByIds(ids: (self.favouriteRepository?.getKeysReversed())!)
+            self.items = self.dictionaryRepository.getByIDs(ids: (self.favouriteRepository?.getKeysReversed())!)
             DispatchQueue.main.async {
                 self.tableView.deleteSections([index.section], with: .fade)
             }

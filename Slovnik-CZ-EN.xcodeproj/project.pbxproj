@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38C4FD0A8B59AD3F97614384 /* Pods_Slovnik_CZ_EN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40C3E1AED6C9A2FD6941E9A1 /* Pods_Slovnik_CZ_EN.framework */; };
 		5B161CAB1F45D2FF00531ACF /* RecentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B161CAA1F45D2FF00531ACF /* RecentsViewController.swift */; };
 		5B459C2B1F45A93C002E8048 /* RecentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B459C2A1F45A93C002E8048 /* RecentRepository.swift */; };
 		5B49F1CB1F445A44003BDA2F /* FavoriteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B49F1CA1F445A44003BDA2F /* FavoriteRepository.swift */; };
 		5B49F1CD1F445B09003BDA2F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B49F1CC1F445B09003BDA2F /* Item.swift */; };
 		5B8A1C6F1F43A6E200849442 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8A1C6E1F43A6E200849442 /* SearchViewController.swift */; };
-		5B9131901F435CC200F08701 /* DictionaryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B91318F1F435CC200F08701 /* DictionaryHelper.swift */; };
+		5B9131901F435CC200F08701 /* DictionaryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B91318F1F435CC200F08701 /* DictionaryRepository.swift */; };
 		5B9131921F43622000F08701 /* en-cs.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5B9131911F43622000F08701 /* en-cs.txt */; };
-		5BA6E73C1F44FB05007174FC /* dict.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B5660041F44F137008D1C2D /* dict.json */; };
 		5BF2D15F1F05675F00A75158 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2D15E1F05675F00A75158 /* AppDelegate.swift */; };
 		5BF2D1661F05675F00A75158 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BF2D1641F05675F00A75158 /* Main.storyboard */; };
 		5BF2D1681F05675F00A75158 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BF2D1671F05675F00A75158 /* Assets.xcassets */; };
@@ -23,13 +23,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		40C3E1AED6C9A2FD6941E9A1 /* Pods_Slovnik_CZ_EN.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Slovnik_CZ_EN.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B161CAA1F45D2FF00531ACF /* RecentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentsViewController.swift; sourceTree = "<group>"; };
 		5B459C2A1F45A93C002E8048 /* RecentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentRepository.swift; sourceTree = "<group>"; };
 		5B49F1CA1F445A44003BDA2F /* FavoriteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRepository.swift; sourceTree = "<group>"; };
 		5B49F1CC1F445B09003BDA2F /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		5B5660041F44F137008D1C2D /* dict.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = dict.json; sourceTree = "<group>"; };
 		5B8A1C6E1F43A6E200849442 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		5B91318F1F435CC200F08701 /* DictionaryHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryHelper.swift; sourceTree = "<group>"; };
+		5B91318F1F435CC200F08701 /* DictionaryRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryRepository.swift; sourceTree = "<group>"; };
 		5B9131911F43622000F08701 /* en-cs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "en-cs.txt"; sourceTree = "<group>"; };
 		5BF2D15B1F05675F00A75158 /* Slovnik-CZ-EN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Slovnik-CZ-EN.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BF2D15E1F05675F00A75158 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +38,8 @@
 		5BF2D16A1F05675F00A75158 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5BF2D16C1F05675F00A75158 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BFE1DAF1F449DB900C73C60 /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
+		BE8E01BCBFDAB49E004DE6BB /* Pods-Slovnik-CZ-EN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slovnik-CZ-EN.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Slovnik-CZ-EN/Pods-Slovnik-CZ-EN.debug.xcconfig"; sourceTree = "<group>"; };
+		ED51F535A56B0FD76C0D2FEF /* Pods-Slovnik-CZ-EN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slovnik-CZ-EN.release.xcconfig"; path = "Pods/Target Support Files/Pods-Slovnik-CZ-EN/Pods-Slovnik-CZ-EN.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38C4FD0A8B59AD3F97614384 /* Pods_Slovnik_CZ_EN.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +57,7 @@
 		5B459C281F45A8DB002E8048 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5BA6E73D1F4500F0007174FC /* Dictionary */,
 				5B49F1CA1F445A44003BDA2F /* FavoriteRepository.swift */,
 				5B459C2A1F45A93C002E8048 /* RecentRepository.swift */,
 			);
@@ -73,10 +77,11 @@
 		5BA6E73D1F4500F0007174FC /* Dictionary */ = {
 			isa = PBXGroup;
 			children = (
-				5B91318F1F435CC200F08701 /* DictionaryHelper.swift */,
+				5B91318F1F435CC200F08701 /* DictionaryRepository.swift */,
 				5B49F1CC1F445B09003BDA2F /* Item.swift */,
 			);
-			path = Dictionary;
+			name = Dictionary;
+			path = ../Dictionary;
 			sourceTree = "<group>";
 		};
 		5BF2D1521F05675F00A75158 = {
@@ -84,6 +89,8 @@
 			children = (
 				5BF2D15D1F05675F00A75158 /* Slovnik-CZ-EN */,
 				5BF2D15C1F05675F00A75158 /* Products */,
+				D75BD22539296B721458B9BF /* Pods */,
+				A0BCDCBCD89A95B79228D921 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,7 +105,6 @@
 		5BF2D15D1F05675F00A75158 /* Slovnik-CZ-EN */ = {
 			isa = PBXGroup;
 			children = (
-				5B5660041F44F137008D1C2D /* dict.json */,
 				5B9131911F43622000F08701 /* en-cs.txt */,
 				5BF2D15E1F05675F00A75158 /* AppDelegate.swift */,
 				5BF2D1641F05675F00A75158 /* Main.storyboard */,
@@ -106,10 +112,26 @@
 				5BF2D1691F05675F00A75158 /* LaunchScreen.storyboard */,
 				5BF2D16C1F05675F00A75158 /* Info.plist */,
 				5B459C291F45A8EF002E8048 /* Controllers */,
-				5BA6E73D1F4500F0007174FC /* Dictionary */,
 				5B459C281F45A8DB002E8048 /* Model */,
 			);
 			path = "Slovnik-CZ-EN";
+			sourceTree = "<group>";
+		};
+		A0BCDCBCD89A95B79228D921 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				40C3E1AED6C9A2FD6941E9A1 /* Pods_Slovnik_CZ_EN.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D75BD22539296B721458B9BF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BE8E01BCBFDAB49E004DE6BB /* Pods-Slovnik-CZ-EN.debug.xcconfig */,
+				ED51F535A56B0FD76C0D2FEF /* Pods-Slovnik-CZ-EN.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,9 +141,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5BF2D16F1F05675F00A75158 /* Build configuration list for PBXNativeTarget "Slovnik-CZ-EN" */;
 			buildPhases = (
+				84CC4967986A45F3151660DD /* [CP] Check Pods Manifest.lock */,
 				5BF2D1571F05675F00A75158 /* Sources */,
 				5BF2D1581F05675F00A75158 /* Frameworks */,
 				5BF2D1591F05675F00A75158 /* Resources */,
+				BC595F1C50BFF74AA956EA49 /* [CP] Embed Pods Frameworks */,
+				F70944695E5EE187ED111710 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -172,7 +197,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BA6E73C1F44FB05007174FC /* dict.json in Resources */,
 				5BF2D16B1F05675F00A75158 /* LaunchScreen.storyboard in Resources */,
 				5B9131921F43622000F08701 /* en-cs.txt in Resources */,
 				5BF2D1681F05675F00A75158 /* Assets.xcassets in Resources */,
@@ -181,6 +205,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		84CC4967986A45F3151660DD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BC595F1C50BFF74AA956EA49 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Slovnik-CZ-EN/Pods-Slovnik-CZ-EN-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F70944695E5EE187ED111710 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Slovnik-CZ-EN/Pods-Slovnik-CZ-EN-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5BF2D1571F05675F00A75158 /* Sources */ = {
@@ -192,7 +264,7 @@
 				5BF2D15F1F05675F00A75158 /* AppDelegate.swift in Sources */,
 				5B8A1C6F1F43A6E200849442 /* SearchViewController.swift in Sources */,
 				5B459C2B1F45A93C002E8048 /* RecentRepository.swift in Sources */,
-				5B9131901F435CC200F08701 /* DictionaryHelper.swift in Sources */,
+				5B9131901F435CC200F08701 /* DictionaryRepository.swift in Sources */,
 				5B49F1CB1F445A44003BDA2F /* FavoriteRepository.swift in Sources */,
 				5B49F1CD1F445B09003BDA2F /* Item.swift in Sources */,
 			);
@@ -317,6 +389,7 @@
 		};
 		5BF2D1701F05675F00A75158 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE8E01BCBFDAB49E004DE6BB /* Pods-Slovnik-CZ-EN.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PJUC9VKD3V;
@@ -330,6 +403,7 @@
 		};
 		5BF2D1711F05675F00A75158 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED51F535A56B0FD76C0D2FEF /* Pods-Slovnik-CZ-EN.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PJUC9VKD3V;

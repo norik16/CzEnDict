@@ -15,6 +15,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     
     var favouriteTranslations: FavoriteRepository = FavoriteRepository.getInstance()
     var recentRepository: RecentRepository = RecentRepository.getInstance()
+    var dictionaryRepository: DictionaryRepository = DictionaryRepository.getInstance()
     
     var items : [Item] = []
     
@@ -51,7 +52,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     
     
     func updateTableForText(searchedText: String) {
-        items = DictionaryHelper.translate(serachedText: searchedText)
+        items = dictionaryRepository.translate(textToTranslate: searchedText)
         
         DispatchQueue.main.async {
             self.tableView.reloadData()
