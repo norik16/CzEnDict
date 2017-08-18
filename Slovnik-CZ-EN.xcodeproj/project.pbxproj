@@ -15,6 +15,7 @@
 		5B8A1C6F1F43A6E200849442 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8A1C6E1F43A6E200849442 /* SearchViewController.swift */; };
 		5B9131901F435CC200F08701 /* DictionaryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B91318F1F435CC200F08701 /* DictionaryRepository.swift */; };
 		5B9131921F43622000F08701 /* en-cs.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5B9131911F43622000F08701 /* en-cs.txt */; };
+		5BDE430B1F4756FE00D4AB8E /* dict.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 5BDE430A1F4756FE00D4AB8E /* dict.sqlite */; };
 		5BF2D15F1F05675F00A75158 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2D15E1F05675F00A75158 /* AppDelegate.swift */; };
 		5BF2D1661F05675F00A75158 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BF2D1641F05675F00A75158 /* Main.storyboard */; };
 		5BF2D1681F05675F00A75158 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BF2D1671F05675F00A75158 /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 		5B8A1C6E1F43A6E200849442 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		5B91318F1F435CC200F08701 /* DictionaryRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryRepository.swift; sourceTree = "<group>"; };
 		5B9131911F43622000F08701 /* en-cs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "en-cs.txt"; sourceTree = "<group>"; };
+		5BDE430A1F4756FE00D4AB8E /* dict.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = dict.sqlite; sourceTree = "<group>"; };
 		5BF2D15B1F05675F00A75158 /* Slovnik-CZ-EN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Slovnik-CZ-EN.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BF2D15E1F05675F00A75158 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BF2D1651F05675F00A75158 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 		5BF2D15D1F05675F00A75158 /* Slovnik-CZ-EN */ = {
 			isa = PBXGroup;
 			children = (
+				5BDE430A1F4756FE00D4AB8E /* dict.sqlite */,
 				5B9131911F43622000F08701 /* en-cs.txt */,
 				5BF2D15E1F05675F00A75158 /* AppDelegate.swift */,
 				5BF2D1641F05675F00A75158 /* Main.storyboard */,
@@ -198,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BF2D16B1F05675F00A75158 /* LaunchScreen.storyboard in Resources */,
+				5BDE430B1F4756FE00D4AB8E /* dict.sqlite in Resources */,
 				5B9131921F43622000F08701 /* en-cs.txt in Resources */,
 				5BF2D1681F05675F00A75158 /* Assets.xcassets in Resources */,
 				5BF2D1661F05675F00A75158 /* Main.storyboard in Resources */,

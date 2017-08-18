@@ -14,7 +14,6 @@ class DictionaryRepository {
     static var sharedInstance: DictionaryRepository? = nil
     
     //Database
-    let path: String = "dict"
     var db: Connection? = nil
     
     //Table
@@ -30,7 +29,7 @@ class DictionaryRepository {
     //let translations = Expression<Array<String>>("translations")
     
     init() {
-        let path = Bundle.main.path(forResource: self.path, ofType: "sqlite")!
+        let path = Bundle.main.path(forResource: "dict", ofType: "sqlite")!
         do {
             db = try Connection(path)
             print("Connected ok")
