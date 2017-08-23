@@ -27,8 +27,15 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         tableView.dataSource = self
         
         searchBar.barStyle = .default
+        searchBar.barTintColor = self.view.tintColor
+        //searchBar.isTranslucent = true
+        //searchBar.backgroundColor = UIColor.gray
+        //searchBar.barTintColor = UIColor.gray
         
         navigationItem.titleView = searchBar
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 140
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
@@ -79,27 +86,25 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     
     
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! SwipeTableViewCell
-//        let row = items[indexPath.section].translations[indexPath.row]
-//        
-//        cell.delegate = self
-//        cell.textLabel?.text = row
-//        return cell
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! SwipeTableViewCell
-        //let row = items[indexPath.section].translations[indexPath.row]
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! MultilineTableViewCell  
         
         
         cell.delegate = self
-        cell.textLabel?.text = ""
         var text = ""
-        
         for row in items[indexPath.section].translations {
-            text += "\(row) \n"
+            
+            if row != items[indexPath.section].translations.last {
+                text += "\(row) \n"
+            } else {
+                text += "\(row)"
+            }
         }
         
-        cell.textLabel?.text = text
+        //cell.textLabel?.text = text
+        cell.multilineLable.text = text
+    
+        //cell.multilineLable.spaci
         
         return cell
     }
