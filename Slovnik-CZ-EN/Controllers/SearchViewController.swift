@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SwipeCellKit
 
-class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
+class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource, SwipeTableViewCellDelegate  {
     
     @IBOutlet weak var tableView: UITableView!
     let searchBar: UISearchBar! =  UISearchBar()
@@ -72,27 +73,54 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     
     
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items[section].translations.count
+        //return items[section].translations.count
+        return 1
     }
     
     
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        let row = items[indexPath.section].translations[indexPath.row]
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! SwipeTableViewCell
+//        let row = items[indexPath.section].translations[indexPath.row]
+//        
+//        cell.delegate = self
+//        cell.textLabel?.text = row
+//        return cell
         
-        cell.textLabel?.text = row
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! SwipeTableViewCell
+        //let row = items[indexPath.section].translations[indexPath.row]
+        
+        
+        
+        cell.delegate = self
+        cell.textLabel?.text = ""
+        var text = ""
+        
+        for row in items[indexPath.section].translations {
+            text += "\(row) \n"
+        }
+        
+        cell.textLabel?.text = text
+        
         return cell
     }
     
-	func tableView(_ tableView: UITableView, editActionsForRowAt: IndexPath) -> [UITableViewRowAction]? {
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
         
-        let toggleFavorite = UITableViewRowAction(style: .normal, title: "Favorite") { (action, index) -> Void in
+//        let toggleFavorite = UITableViewRowAction(style: .normal, title: "Favorite") { (action, index) -> Void in
+//            let item = self.items[index.section]
+//            self.favouriteTranslations.addKey(key: item.id)
+//        }
+        
+        
+        let toggleFavorite = SwipeAction(style: .default, title: "Favorite", handler: { (action, index) -> Void in
             let item = self.items[index.section]
             self.favouriteTranslations.addKey(key: item.id)
-        }
-        
-        
+            print("Favorite")
+        })
+
+        toggleFavorite.image = #imageLiteral(resourceName: "Favourite")
         toggleFavorite.backgroundColor =  self.view.tintColor
+
 
         return [toggleFavorite]
     }
@@ -112,6 +140,21 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
      // Pass the selected object to the new view controller.
      }
      */
+    
+}
+
+extension SwipeTableViewCellDelegate {
+    
+    func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeTableOptions {
+        
+        var options = SwipeTableOptions()
+        options.expansionStyle = .selection
+        options.buttonSpacing = 11
+        options.buttonPadding = 22
+        //options.
+        
+        return options
+    }
     
 }
 

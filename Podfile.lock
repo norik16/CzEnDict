@@ -2,13 +2,16 @@ PODS:
   - SQLite.swift (0.11.3):
     - SQLite.swift/standard (= 0.11.3)
   - SQLite.swift/standard (0.11.3)
+  - SwipeCellKit (1.9.1)
 
 DEPENDENCIES:
   - SQLite.swift (~> 0.11.3)
+  - SwipeCellKit
 
 SPEC CHECKSUMS:
   SQLite.swift: 99b36c22084427f0abbeb957556ce1528cf10bb3
+  SwipeCellKit: e9ff953c820394a4e641cfb0118b6c959506aec2
 
-PODFILE CHECKSUM: 405cccb3daeea63d44b867da158cbc1f1eca50c1
+PODFILE CHECKSUM: cd47b1f04f4cfcb0e110dd9a0b8db39a3307631e
 
 COCOAPODS: 1.2.0

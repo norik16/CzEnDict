@@ -12,6 +12,7 @@
 		5B459C2B1F45A93C002E8048 /* RecentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B459C2A1F45A93C002E8048 /* RecentRepository.swift */; };
 		5B49F1CB1F445A44003BDA2F /* FavoriteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B49F1CA1F445A44003BDA2F /* FavoriteRepository.swift */; };
 		5B49F1CD1F445B09003BDA2F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B49F1CC1F445B09003BDA2F /* Item.swift */; };
+		5B63479F1F4DD2490082A8C0 /* MultilineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B63479E1F4DD2490082A8C0 /* MultilineTableViewCell.swift */; };
 		5B8A1C6F1F43A6E200849442 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8A1C6E1F43A6E200849442 /* SearchViewController.swift */; };
 		5B9131901F435CC200F08701 /* DictionaryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B91318F1F435CC200F08701 /* DictionaryRepository.swift */; };
 		5B9131921F43622000F08701 /* en-cs.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5B9131911F43622000F08701 /* en-cs.txt */; };
@@ -29,6 +30,7 @@
 		5B459C2A1F45A93C002E8048 /* RecentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentRepository.swift; sourceTree = "<group>"; };
 		5B49F1CA1F445A44003BDA2F /* FavoriteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRepository.swift; sourceTree = "<group>"; };
 		5B49F1CC1F445B09003BDA2F /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		5B63479E1F4DD2490082A8C0 /* MultilineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultilineTableViewCell.swift; sourceTree = "<group>"; };
 		5B8A1C6E1F43A6E200849442 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		5B91318F1F435CC200F08701 /* DictionaryRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryRepository.swift; sourceTree = "<group>"; };
 		5B9131911F43622000F08701 /* en-cs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "en-cs.txt"; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				5BF2D16C1F05675F00A75158 /* Info.plist */,
 				5B459C291F45A8EF002E8048 /* Controllers */,
 				5B459C281F45A8DB002E8048 /* Model */,
+				5B63479E1F4DD2490082A8C0 /* MultilineTableViewCell.swift */,
 			);
 			path = "Slovnik-CZ-EN";
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B63479F1F4DD2490082A8C0 /* MultilineTableViewCell.swift in Sources */,
 				5BFE1DB01F449DB900C73C60 /* FavouritesViewController.swift in Sources */,
 				5B161CAB1F45D2FF00531ACF /* RecentsViewController.swift in Sources */,
 				5BF2D15F1F05675F00A75158 /* AppDelegate.swift in Sources */,
