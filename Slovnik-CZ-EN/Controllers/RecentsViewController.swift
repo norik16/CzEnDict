@@ -7,14 +7,16 @@
 //
 
 import UIKit
+import SwipeCellKit
 
-class RecentsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class RecentsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SwipeTableViewCellDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     //@IBOutlet weak var tableView: UITableView!
     var recentsRepository: RecentRepository? = nil
     
     var records = [String: String]()
+    var searchForText: String? = nil
     
     override func viewDidAppear(_ animated: Bool) {
         recentsRepository = RecentRepository.getInstance()
@@ -43,18 +45,44 @@ class RecentsViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RecetnCell", for: indexPath)
-        //let row = Array(records.keys)[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RecetnCell") as! MultilineTableViewCell
+        cell.delegate = self
         
-        //cell.textLabel?.text = "\(Array(records.keys)[indexPath.row])  ->  \(Array(records.values)[indexPath.row])"
         cell.textLabel?.text = (Array(records.keys)[indexPath.row])
         cell.detailTextLabel?.text = (Array(records.values)[indexPath.row])
+
         return cell
     }
     
-    func tableView(_ tableView: UITableView, editActionsForRowAt: IndexPath) -> [UITableViewRowAction]? {
+    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        //self.navigationController?.pushViewController(SearchViewController, animated: true)
+        //self.navigationController?.popToViewController(SearchViewController, animated: true)
         
-        let remove = UITableViewRowAction(style: .default, title: "Remove") { (action, index) -> Void in
+        searchForText = (Array(records.keys)[indexPath.row])
+        self.performSegue(withIdentifier: "SearchForRecent", sender: self)
+        
+        return true
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SearchForRecent" && searchForText != nil{
+            let searchController = segue.destination.childViewControllers[0].childViewControllers[0] as! SearchViewController
+            searchController.searchBar.text = searchForText
+            DispatchQueue.main.async {
+                //Has to be done in async, because searchController is not fully inicialized
+                
+                //Stack??? = Memory... 
+                searchController.updateTableForText(searchedText: self.searchForText!)
+            }
+        }
+    }
+    
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        
+        
+        let removeAction = SwipeAction(style: .default, title: "Odebrat", handler: { (action, index) -> Void in
+            
             let recordKey = (Array(self.records.keys)[index.row])
             self.recentsRepository?.remove(key: recordKey)
             self.records.removeValue(forKey: recordKey)
@@ -62,12 +90,15 @@ class RecentsViewController: UIViewController, UITableViewDelegate, UITableViewD
             DispatchQueue.main.async {
                 self.tableView.deleteRows(at: [index], with: .fade)
             }
-        }
         
-        remove.backgroundColor =  UIColor.red
+        })
         
-        return [remove]
+        //removeAction.image = #imageLiteral(resourceName: "trash")
+        removeAction.backgroundColor =  UIColor.red
+        
+        return [removeAction]
     }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

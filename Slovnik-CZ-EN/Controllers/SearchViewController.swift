@@ -9,7 +9,7 @@
 import UIKit
 import SwipeCellKit
 
-class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource, SwipeTableViewCellDelegate  {
+final class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource, SwipeTableViewCellDelegate  {
     
     @IBOutlet weak var tableView: UITableView!
     let searchBar: UISearchBar! =  UISearchBar()
@@ -20,23 +20,24 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     
     var items : [Item] = []
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
         
-        searchBar.barStyle = .default
-        searchBar.barTintColor = self.view.tintColor
-        //searchBar.isTranslucent = true
-        //searchBar.backgroundColor = UIColor.gray
-        //searchBar.barTintColor = UIColor.gray
-        
+        searchBar.searchBarStyle = .minimal
         navigationItem.titleView = searchBar
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 140
     }
+    
+//    override func viewDidAppear(_ animated: Bool) {
+//        self.navigationController.stack
+//    }
+    
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         items = []
@@ -65,7 +66,6 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
-        
     }
     
 
@@ -86,9 +86,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     
     
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! MultilineTableViewCell  
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! MultilineTableViewCell
         
         cell.delegate = self
         var text = ""
@@ -101,23 +99,14 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
             }
         }
         
-        //cell.textLabel?.text = text
         cell.multilineLable.text = text
-    
-        //cell.multilineLable.spaci
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
         
-//        let toggleFavorite = UITableViewRowAction(style: .normal, title: "Favorite") { (action, index) -> Void in
-//            let item = self.items[index.section]
-//            self.favouriteTranslations.addKey(key: item.id)
-//        }
-        
-        
-        let toggleFavorite = SwipeAction(style: .default, title: "Favorite", handler: { (action, index) -> Void in
+        let toggleFavorite = SwipeAction(style: .default, title: "Oblíbené", handler: { (action, index) -> Void in
             let item = self.items[index.section]
             self.favouriteTranslations.addKey(key: item.id)
             print("Favorite")

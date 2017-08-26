@@ -34,8 +34,8 @@ class RecentRepository: NSObject, NSCoding {
     }
     
     func addRecord(searchedWorld: String, firstResult: String){
-        if records.count > 10 {
-            records.popFirst()
+        if records.count > 100 {
+            _ = records.popFirst()
         }
         
         records[searchedWorld] = firstResult

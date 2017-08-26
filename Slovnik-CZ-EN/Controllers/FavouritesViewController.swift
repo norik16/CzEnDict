@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SwipeCellKit
 
-class FavouritesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FavouritesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SwipeTableViewCellDelegate {
     
     
     @IBOutlet weak var tableView: UITableView!
@@ -18,7 +19,6 @@ class FavouritesViewController: UIViewController, UITableViewDelegate, UITableVi
     var items : [Item] = []
     
     override func viewDidAppear(_ animated: Bool) {
-        //self.favouriteRepository = FavoriteRepository.getInstance()
         self.items = dictionaryRepository.getByIDs(ids: (self.favouriteRepository?.getKeysReversed())!)
         
         DispatchQueue.main.async {
@@ -30,6 +30,9 @@ class FavouritesViewController: UIViewController, UITableViewDelegate, UITableVi
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 140
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -43,33 +46,50 @@ class FavouritesViewController: UIViewController, UITableViewDelegate, UITableVi
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items[section].translations.count
+        //return items[section].translations.count
+        return 1
     }
     
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FavouriteCell", for: indexPath)
-        let row = items[indexPath.section].translations[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FavouriteCell") as! MultilineTableViewCell
+        cell.delegate = self
         
-        cell.textLabel?.text = row
+        var text = ""
+        for row in items[indexPath.section].translations {
+            
+            if row != items[indexPath.section].translations.last {
+                text += "\(row) \n"
+            } else {
+                text += "\(row)"
+            }
+        }
+        
+        cell.multilineLable.text = text
+        
         return cell
     }
     
-    func tableView(_ tableView: UITableView, editActionsForRowAt: IndexPath) -> [UITableViewRowAction]? {
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
         
-        let toggleFavorite = UITableViewRowAction(style: .default, title: "Remove") { (action, index) -> Void in
+
+        let removeAction = SwipeAction(style: .default, title: "Odebrat", handler: { (action, index) -> Void in
+            
             let item = self.items[index.section]
             self.favouriteRepository?.removeKey(key: item.id)
             
             self.items = self.dictionaryRepository.getByIDs(ids: (self.favouriteRepository?.getKeysReversed())!)
+            
+            //Race condition ???!!
             DispatchQueue.main.async {
-                self.tableView.deleteSections([index.section], with: .fade)
-            }
-        }
+                self.tableView.deleteSections([index.section], with: .left)
+                }
+        })
         
-        toggleFavorite.backgroundColor =  UIColor.red
+        removeAction.image = #imageLiteral(resourceName: "trash")
+        removeAction.backgroundColor =  UIColor.red
         
-        return [toggleFavorite]
+        return [removeAction]
     }
     
     override func didReceiveMemoryWarning() {
