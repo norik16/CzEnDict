@@ -17,12 +17,24 @@ class BaseRepository {
     static var instances = [BaseRepository]()
     
     required init() {
-        let path = Bundle.main.path(forResource: "dict", ofType: "sqlite")!
-        do {
-            db = try Connection(path)
+        let fileManger = FileManager.default
+        
+        let doumentDirectoryPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString
+        let destinationPath = doumentDirectoryPath.appendingPathComponent("dictV1.sqlite")
+
+        let sourcePath = Bundle.main.path(forResource: "dict", ofType: "sqlite")
+        
+        
+        do{
+            if !fileManger.fileExists(atPath: destinationPath) {
+                try fileManger.copyItem(atPath: sourcePath!, toPath: destinationPath)
+            }
+                
+            db = try Connection(destinationPath)
             print("Connected ok")
-            
-        } catch  {
+                
+        }catch {
+            print(error.localizedDescription)
             print("Error in connecting to the database")
         }
     }

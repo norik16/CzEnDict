@@ -6,7 +6,7 @@
   "data" : [
     {
       "idiom" : "universal",
-      "filename" : "dict.json"
+      "filename" : "dict.sqlite"
     }
   ]
 }

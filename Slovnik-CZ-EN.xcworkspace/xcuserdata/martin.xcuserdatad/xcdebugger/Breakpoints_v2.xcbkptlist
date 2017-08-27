@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Slovnik-CZ-EN/Model/BaseRepository.swift"
-            timestampString = "525532411.140584"
+            timestampString = "525555156.38797"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "getInstance()"
             landmarkType = "7">
          </BreakpointContent>

@@ -164,7 +164,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vjb-PK-qN6" id="SyT-bs-nhm">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6w-PU-LrT">
@@ -213,7 +213,7 @@
             </objects>
             <point key="canvasLocation" x="925.60000000000002" y="-476.31184407796104"/>
         </scene>
-        <!--Recents-->
+        <!--Poslední-->
         <scene sceneID="Rbb-YG-GV2">
             <objects>
                 <viewController id="4CC-az-Un2" customClass="RecentsViewController" customModule="Slovnik_CZ_EN" customModuleProvider="target" sceneMemberID="viewController">
@@ -264,7 +264,7 @@
                             <constraint firstItem="glE-Se-9Hx" firstAttribute="top" secondItem="uUZ-VO-78s" secondAttribute="bottom" id="h4r-xC-Jk6"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Recents" id="es8-4G-cta"/>
+                    <navigationItem key="navigationItem" title="Poslední" id="es8-4G-cta"/>
                     <connections>
                         <outlet property="tableView" destination="uUZ-VO-78s" id="Wcz-Oi-Sjw"/>
                         <segue destination="2gp-D9-Kgl" kind="presentation" identifier="SearchForRecent" modalTransitionStyle="coverVertical" id="1jP-hz-73J"/>
