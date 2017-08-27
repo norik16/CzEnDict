@@ -13,13 +13,13 @@ class FavouritesViewController: UIViewController, UITableViewDelegate, UITableVi
     
     
     @IBOutlet weak var tableView: UITableView!
-    var favouriteRepository: FavoriteRepository? = FavoriteRepository.getInstance()
-    var dictionaryRepository: DictionaryRepository = DictionaryRepository.getInstance()
+    var favouriteRepository: FavoriteRepository = RepositoryManager.getInstance()
+    var dictionaryRepository: DictionaryRepository = RepositoryManager.getInstance()
     
     var items : [Item] = []
     
     override func viewDidAppear(_ animated: Bool) {
-        self.items = dictionaryRepository.getByIDs(ids: (self.favouriteRepository?.getKeysReversed())!)
+        self.items = favouriteRepository.getFavorites() //dictionaryRepository.getByIDs(ids: (self.favouriteRepository.getKeysReversed()))
         
         DispatchQueue.main.async {
             self.tableView.reloadData()
@@ -76,14 +76,14 @@ class FavouritesViewController: UIViewController, UITableViewDelegate, UITableVi
         let removeAction = SwipeAction(style: .default, title: "Odebrat", handler: { (action, index) -> Void in
             
             let item = self.items[index.section]
-            self.favouriteRepository?.removeKey(key: item.id)
-            
-            self.items = self.dictionaryRepository.getByIDs(ids: (self.favouriteRepository?.getKeysReversed())!)
-            
+            //self.favouriteRepository.removeKey(key: item.id)
+            self.favouriteRepository.remove(translationId: item.id)
+            //self.items =  self.favouriteRepository.getFavorites() //self.dictionaryRepository.getByIDs(ids: (self.favouriteRepository.getKeysReversed()))
+            self.items.remove(at: index.section)
             //Race condition ???!!
             DispatchQueue.main.async {
                 self.tableView.deleteSections([index.section], with: .left)
-                }
+            }
         })
         
         removeAction.image = #imageLiteral(resourceName: "trash")

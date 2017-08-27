@@ -1,68 +1,60 @@
 //
-//  FavoriteTranslation.swift
+//  RecentRepository.swift
 //  Slovnik-CZ-EN
 //
-//  Created by Martin Miksik on 17/08/2017.
+//  Created by Martin Miksik on 26/08/2017.
 //  Copyright © 2017 Martin Miksik. All rights reserved.
 //
 
 import Foundation
+import SQLite
 
-class RecentRepository: NSObject, NSCoding {
+class RecentRepository: BaseRepository {
     
-    private static var sharedInstance: RecentRepository? = nil
-    private static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-    private static let ArchiveURL = DocumentsDirectory.appendingPathComponent("HistoryRepositoryV2")
+    //Table
+    //TODO Export table name
+    let recent = Table("recent")
     
-    private let size: Int = 10
-    private var records = [String: String]()
+    //Collums
+    let id = Expression<Int>("id")
+    let origin = Expression<String>("origin")
+    let translation = Expression<String>("translation")
+    //let date = Expression<Date>("date")
+
     
-    init(records: [String: String]) {
-        self.records = records
-    }
     
-    required convenience init?(coder decoder: NSCoder) {
-        guard let records = decoder.decodeObject(forKey: "records") as? [String: String] else {
-            return nil
+    func add(originT: String, translationT: String) {
+        let insert = recent.insert(self.origin <- originT, self.translation <- translationT)
+        do {
+            print(insert.asSQL())
+            let id = try db!.run(insert)
+            print(id)
+        } catch {
+            print(error.localizedDescription)
         }
-        
-        self.init(records: records)
     }
     
-    func encode(with aCoder: NSCoder) {
-        aCoder.encode(self.records, forKey: "records")
-    }
-    
-    func addRecord(searchedWorld: String, firstResult: String){
-        if records.count > 100 {
-            _ = records.popFirst()
+    func remove(origin: String) {
+        let row = self.recent.filter(self.origin == origin)
+        do {
+            try db!.run(row.delete())
+        } catch {
+            print(error.localizedDescription)
         }
-        
-        records[searchedWorld] = firstResult
     }
     
-    func remove(key: String) {
-        records.removeValue(forKey: key)
-    }
-    
-    func getReversed() -> [String: String] {
-        return records
-    }
-    
-    static func getInstance() -> RecentRepository {
-        if RecentRepository.sharedInstance == nil {
-            if let cachedInstance = NSKeyedUnarchiver.unarchiveObject(withFile: RecentRepository.ArchiveURL.path) {
-                RecentRepository.sharedInstance = cachedInstance as? RecentRepository
-            } else {
-                let emptyArray = [String: String]()
-                RecentRepository.sharedInstance = RecentRepository(records: emptyArray)
+    func getAll() -> [(String, String)]{
+        var rows = [(String, String)]()
+        do {
+            for row in try db!.prepare(recent) {
+                rows.append((row[origin], row[translation]))
             }
+        } catch {
+            print(error.localizedDescription)
         }
-        return RecentRepository.sharedInstance!
+        
+        return rows.reversed()
     }
     
-    static func saveInstance() {
-        NSKeyedArchiver.archiveRootObject(RecentRepository.sharedInstance as Any, toFile: RecentRepository.ArchiveURL.path)
-    }
 }
 

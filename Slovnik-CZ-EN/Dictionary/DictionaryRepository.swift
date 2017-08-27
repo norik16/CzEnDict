@@ -9,15 +9,9 @@
 import Foundation
 import SQLite
 
-class DictionaryRepository {
-    
-    static var sharedInstance: DictionaryRepository? = nil
-    
-    //Database
-    var db: Connection? = nil
+final class DictionaryRepository: BaseRepository{
     
     //Table
-    //TODO Export table name
     let dicrionary = Table("dictonary")
     let resultLimit: Int = 500
     
@@ -26,18 +20,6 @@ class DictionaryRepository {
     let origin = Expression<String>("origin")
     let originLanguage = Expression<String>("originLanguage")
     let translations = Expression<String>("translations")
-    //let translations = Expression<Array<String>>("translations")
-    
-    init() {
-        let path = Bundle.main.path(forResource: "dict", ofType: "sqlite")!
-        do {
-            db = try Connection(path)
-            print("Connected ok")
-            
-        } catch  {
-           print("Error in connecting to the database")
-        }
-    }
     
     func translate(textToTranslate: String) -> [Item] {
         let query = dicrionary.filter(origin.lowercaseString.like("\(textToTranslate)%") == true).limit(resultLimit)
@@ -47,16 +29,7 @@ class DictionaryRepository {
     
     func getByIDs(ids: [String]) -> [Item] {
         let query = dicrionary.filter(ids.contains(id)).limit(resultLimit)
-        //print(query)
         return run(query: query)
-    }
-    
-    static func getInstance() -> DictionaryRepository {
-        if DictionaryRepository.sharedInstance == nil {
-            DictionaryRepository.sharedInstance = DictionaryRepository()
-        }
-        
-        return DictionaryRepository.sharedInstance!
     }
     
     private func run(query: Table) -> [Item]{
@@ -64,7 +37,7 @@ class DictionaryRepository {
         do {
             for row in try db!.prepare(query) {
                 let translations = row[self.translations].components(separatedBy: "=")
-                print(translations)
+                //print(translations)
                 items.append(Item(
                     id: row[id],
                     origin: row[origin],

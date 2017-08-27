@@ -13,14 +13,14 @@ class RecentsViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     @IBOutlet weak var tableView: UITableView!
     //@IBOutlet weak var tableView: UITableView!
-    var recentsRepository: RecentRepository? = nil
+    var recentsRepository: RecentRepository = RepositoryManager.getInstance()
     
-    var records = [String: String]()
+    var records = [(origin: String, translation: String)]()
     var searchForText: String? = nil
     
     override func viewDidAppear(_ animated: Bool) {
-        recentsRepository = RecentRepository.getInstance()
-        records = (recentsRepository?.getReversed())!
+//        recentsRepository = RecentRepository.getInstance()
+        records = recentsRepository.getAll()
         //self.translations = DictionaryHelper.getByIds(ids: (self.favouriteRepository?.getKeysReversed())!)
         
         DispatchQueue.main.async {
@@ -48,8 +48,8 @@ class RecentsViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecetnCell") as! MultilineTableViewCell
         cell.delegate = self
         
-        cell.textLabel?.text = (Array(records.keys)[indexPath.row])
-        cell.detailTextLabel?.text = (Array(records.values)[indexPath.row])
+        cell.textLabel?.text = records[indexPath.row].origin
+        cell.detailTextLabel?.text = records[indexPath.row].translation
 
         return cell
     }
@@ -58,7 +58,7 @@ class RecentsViewController: UIViewController, UITableViewDelegate, UITableViewD
         //self.navigationController?.pushViewController(SearchViewController, animated: true)
         //self.navigationController?.popToViewController(SearchViewController, animated: true)
         
-        searchForText = (Array(records.keys)[indexPath.row])
+        searchForText = records[indexPath.row].origin
         self.performSegue(withIdentifier: "SearchForRecent", sender: self)
         
         return true
@@ -83,9 +83,9 @@ class RecentsViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         let removeAction = SwipeAction(style: .default, title: "Odebrat", handler: { (action, index) -> Void in
             
-            let recordKey = (Array(self.records.keys)[index.row])
-            self.recentsRepository?.remove(key: recordKey)
-            self.records.removeValue(forKey: recordKey)
+            let origin = self.records[indexPath.row].origin
+            self.recentsRepository.remove(origin: origin)
+            self.records = self.recentsRepository.getAll()
             
             DispatchQueue.main.async {
                 self.tableView.deleteRows(at: [index], with: .fade)

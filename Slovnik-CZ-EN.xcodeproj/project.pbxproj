@@ -9,13 +9,16 @@
 /* Begin PBXBuildFile section */
 		38C4FD0A8B59AD3F97614384 /* Pods_Slovnik_CZ_EN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40C3E1AED6C9A2FD6941E9A1 /* Pods_Slovnik_CZ_EN.framework */; };
 		5B161CAB1F45D2FF00531ACF /* RecentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B161CAA1F45D2FF00531ACF /* RecentsViewController.swift */; };
-		5B459C2B1F45A93C002E8048 /* RecentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B459C2A1F45A93C002E8048 /* RecentRepository.swift */; };
-		5B49F1CB1F445A44003BDA2F /* FavoriteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B49F1CA1F445A44003BDA2F /* FavoriteRepository.swift */; };
+		5B49F1CB1F445A44003BDA2F /* FavoriteRepository-.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B49F1CA1F445A44003BDA2F /* FavoriteRepository-.swift */; };
 		5B49F1CD1F445B09003BDA2F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B49F1CC1F445B09003BDA2F /* Item.swift */; };
 		5B63479F1F4DD2490082A8C0 /* MultilineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B63479E1F4DD2490082A8C0 /* MultilineTableViewCell.swift */; };
 		5B8A1C6F1F43A6E200849442 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8A1C6E1F43A6E200849442 /* SearchViewController.swift */; };
 		5B9131901F435CC200F08701 /* DictionaryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B91318F1F435CC200F08701 /* DictionaryRepository.swift */; };
 		5B9131921F43622000F08701 /* en-cs.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5B9131911F43622000F08701 /* en-cs.txt */; };
+		5B965B7A1F51E2E30093E6AC /* RecentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B965B791F51E2E30093E6AC /* RecentRepository.swift */; };
+		5B965B7C1F51E31C0093E6AC /* BaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B965B7B1F51E31C0093E6AC /* BaseRepository.swift */; };
+		5B965B7E1F533D950093E6AC /* dictCopy.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 5B965B7D1F533D950093E6AC /* dictCopy.sqlite */; };
+		5B965B801F5347C40093E6AC /* FavoriteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B965B7F1F5347C40093E6AC /* FavoriteRepository.swift */; };
 		5BDE430B1F4756FE00D4AB8E /* dict.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 5BDE430A1F4756FE00D4AB8E /* dict.sqlite */; };
 		5BF2D15F1F05675F00A75158 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2D15E1F05675F00A75158 /* AppDelegate.swift */; };
 		5BF2D1661F05675F00A75158 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BF2D1641F05675F00A75158 /* Main.storyboard */; };
@@ -27,13 +30,16 @@
 /* Begin PBXFileReference section */
 		40C3E1AED6C9A2FD6941E9A1 /* Pods_Slovnik_CZ_EN.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Slovnik_CZ_EN.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B161CAA1F45D2FF00531ACF /* RecentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentsViewController.swift; sourceTree = "<group>"; };
-		5B459C2A1F45A93C002E8048 /* RecentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentRepository.swift; sourceTree = "<group>"; };
-		5B49F1CA1F445A44003BDA2F /* FavoriteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRepository.swift; sourceTree = "<group>"; };
+		5B49F1CA1F445A44003BDA2F /* FavoriteRepository-.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoriteRepository-.swift"; sourceTree = "<group>"; };
 		5B49F1CC1F445B09003BDA2F /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		5B63479E1F4DD2490082A8C0 /* MultilineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultilineTableViewCell.swift; sourceTree = "<group>"; };
 		5B8A1C6E1F43A6E200849442 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		5B91318F1F435CC200F08701 /* DictionaryRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryRepository.swift; sourceTree = "<group>"; };
 		5B9131911F43622000F08701 /* en-cs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "en-cs.txt"; sourceTree = "<group>"; };
+		5B965B791F51E2E30093E6AC /* RecentRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentRepository.swift; sourceTree = "<group>"; };
+		5B965B7B1F51E31C0093E6AC /* BaseRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRepository.swift; sourceTree = "<group>"; };
+		5B965B7D1F533D950093E6AC /* dictCopy.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = dictCopy.sqlite; sourceTree = "<group>"; };
+		5B965B7F1F5347C40093E6AC /* FavoriteRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteRepository.swift; sourceTree = "<group>"; };
 		5BDE430A1F4756FE00D4AB8E /* dict.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = dict.sqlite; sourceTree = "<group>"; };
 		5BF2D15B1F05675F00A75158 /* Slovnik-CZ-EN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Slovnik-CZ-EN.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BF2D15E1F05675F00A75158 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,8 +68,10 @@
 			isa = PBXGroup;
 			children = (
 				5BA6E73D1F4500F0007174FC /* Dictionary */,
-				5B49F1CA1F445A44003BDA2F /* FavoriteRepository.swift */,
-				5B459C2A1F45A93C002E8048 /* RecentRepository.swift */,
+				5B49F1CA1F445A44003BDA2F /* FavoriteRepository-.swift */,
+				5B965B7F1F5347C40093E6AC /* FavoriteRepository.swift */,
+				5B965B791F51E2E30093E6AC /* RecentRepository.swift */,
+				5B965B7B1F51E31C0093E6AC /* BaseRepository.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -109,6 +117,7 @@
 		5BF2D15D1F05675F00A75158 /* Slovnik-CZ-EN */ = {
 			isa = PBXGroup;
 			children = (
+				5B965B7D1F533D950093E6AC /* dictCopy.sqlite */,
 				5BDE430A1F4756FE00D4AB8E /* dict.sqlite */,
 				5B9131911F43622000F08701 /* en-cs.txt */,
 				5BF2D15E1F05675F00A75158 /* AppDelegate.swift */,
@@ -207,6 +216,7 @@
 				5BDE430B1F4756FE00D4AB8E /* dict.sqlite in Resources */,
 				5B9131921F43622000F08701 /* en-cs.txt in Resources */,
 				5BF2D1681F05675F00A75158 /* Assets.xcassets in Resources */,
+				5B965B7E1F533D950093E6AC /* dictCopy.sqlite in Resources */,
 				5BF2D1661F05675F00A75158 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,12 +278,14 @@
 			files = (
 				5B63479F1F4DD2490082A8C0 /* MultilineTableViewCell.swift in Sources */,
 				5BFE1DB01F449DB900C73C60 /* FavouritesViewController.swift in Sources */,
+				5B965B7A1F51E2E30093E6AC /* RecentRepository.swift in Sources */,
 				5B161CAB1F45D2FF00531ACF /* RecentsViewController.swift in Sources */,
 				5BF2D15F1F05675F00A75158 /* AppDelegate.swift in Sources */,
 				5B8A1C6F1F43A6E200849442 /* SearchViewController.swift in Sources */,
-				5B459C2B1F45A93C002E8048 /* RecentRepository.swift in Sources */,
+				5B965B7C1F51E31C0093E6AC /* BaseRepository.swift in Sources */,
+				5B965B801F5347C40093E6AC /* FavoriteRepository.swift in Sources */,
 				5B9131901F435CC200F08701 /* DictionaryRepository.swift in Sources */,
-				5B49F1CB1F445A44003BDA2F /* FavoriteRepository.swift in Sources */,
+				5B49F1CB1F445A44003BDA2F /* FavoriteRepository-.swift in Sources */,
 				5B49F1CD1F445B09003BDA2F /* Item.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

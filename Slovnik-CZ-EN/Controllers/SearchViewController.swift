@@ -14,9 +14,9 @@ final class SearchViewController: UIViewController, UISearchBarDelegate, UITable
     @IBOutlet weak var tableView: UITableView!
     let searchBar: UISearchBar! =  UISearchBar()
     
-    var favouriteTranslations: FavoriteRepository = FavoriteRepository.getInstance()
-    var recentRepository: RecentRepository = RecentRepository.getInstance()
-    var dictionaryRepository: DictionaryRepository = DictionaryRepository.getInstance()
+    var favoriteRepository: FavoriteRepository = RepositoryManager.getInstance()
+    var recentRepository: RecentRepository = RepositoryManager.getInstance()
+    var dictionaryRepository: DictionaryRepository = RepositoryManager.getInstance()//= DictionaryRepository.getInstance()
     
     var items : [Item] = []
     
@@ -54,7 +54,9 @@ final class SearchViewController: UIViewController, UISearchBarDelegate, UITable
         if let searchedText = searchBar.text {
             updateTableForText(searchedText: searchedText)
             if !items.isEmpty {
-                recentRepository.addRecord(searchedWorld: searchedText, firstResult: (items.first?.translations.first)!)
+                DispatchQueue.main.async {
+                    self.recentRepository.add(originT: searchedText, translationT: (self.items.first?.translations.first)!)
+                }
             }
         }
     }
@@ -108,7 +110,8 @@ final class SearchViewController: UIViewController, UISearchBarDelegate, UITable
         
         let toggleFavorite = SwipeAction(style: .default, title: "Oblíbené", handler: { (action, index) -> Void in
             let item = self.items[index.section]
-            self.favouriteTranslations.addKey(key: item.id)
+            //self.favouriteTranslations.addKey(key: item.id)
+            self.favoriteRepository.add(translationId: item.id)
             print("Favorite")
         })
 

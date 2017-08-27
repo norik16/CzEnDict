@@ -1,68 +1,61 @@
 //
-//  FavoriteTranslation.swift
+//  FavoriteRepository.swift
 //  Slovnik-CZ-EN
 //
-//  Created by Martin Miksik on 16/08/2017.
+//  Created by Martin Miksik on 27/08/2017.
 //  Copyright © 2017 Martin Miksik. All rights reserved.
 //
 
 import Foundation
+import SQLite
 
-class FavoriteRepository: NSObject, NSCoding {
+class FavoriteRepository: BaseRepository {
     
-    private static var sharedInstance: FavoriteRepository? = nil
-    private static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-    private static let ArchiveURL = DocumentsDirectory.appendingPathComponent("FavouriteRepository")
     
-    private var keys = [String]()
+    //Table
+    //TODO Export table name
+    let table = Table("favorite")
     
-    init(keys: [String]) {
-        self.keys = keys
+    //Collums
+    let id = Expression<Int>("id")
+    let translationId = Expression<String>("translationid")
+    
+    
+    let dictionaryRepository: DictionaryRepository = RepositoryManager.getInstance()
+
+    
+    func add(translationId: String) {
+        let insert = table.insert(self.translationId <- translationId)
+        do {
+            print(insert.asSQL())
+            let id = try db!.run(insert)
+            print(id)
+        } catch {
+            print(error.localizedDescription)
+        }
     }
     
-    required convenience init?(coder decoder: NSCoder) {
-        guard let keys = decoder.decodeObject(forKey: "keys") as? [String] else {
-            return nil
+    func remove(translationId: String) {
+        let row = self.table.filter(self.translationId == translationId)
+        do {
+            try db!.run(row.delete())
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func getFavorites() -> [Item] {
+        var ids = [String]()
+        
+        do {
+            for row in try db!.prepare(table) {
+                ids.append(row[translationId])
+            }
+        } catch {
+            print(error.localizedDescription)
         }
         
-        self.init(keys: keys)
+        return dictionaryRepository.getByIDs(ids: ids)
     }
-    
-    func encode(with aCoder: NSCoder) {
-         aCoder.encode(self.keys, forKey: "keys")
-    }
-    
-    func addKey(key: String){
-        if !keys.contains(key) {
-            keys.append(key)
-        }
-    }
-    
-    func removeKey(key: String) {
-        keys = keys.filter { $0 != key }
-    }
-    
-    func isFavourite(key: String) -> Bool {
-        return keys.contains(key)
-    }
-    
-    func getKeysReversed() -> [String] {
-        return keys.reversed()
-    }
-    
-    static func getInstance() -> FavoriteRepository {
-        if FavoriteRepository.sharedInstance == nil {
-            if let cachedInstance = NSKeyedUnarchiver.unarchiveObject(withFile: FavoriteRepository.ArchiveURL.path) {
-                FavoriteRepository.sharedInstance = cachedInstance as? FavoriteRepository
-            } else {
-                let emptyArray = [String]()
-                FavoriteRepository.sharedInstance = FavoriteRepository(keys: emptyArray)
-            }
-        }
-        return FavoriteRepository.sharedInstance!
-    }
-    
-    static func saveInstance() {
-        NSKeyedArchiver.archiveRootObject(FavoriteRepository.sharedInstance as Any, toFile: FavoriteRepository.ArchiveURL.path)
-    }
+
 }
